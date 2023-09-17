@@ -1,8 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import { BootstrapVue, FormFilePlugin, IconsPlugin } from "bootstrap-vue";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+import "bootstrap/dist/css/bootstrap.css";
 
-Vue.config.productionTip = false
+import router from "./router/index";
+
+Vue.use("VueRouter");
+
+Vue.use(FormFilePlugin);
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    render: (h) => h(App),
+    router: router,
+}).$mount("#app");
