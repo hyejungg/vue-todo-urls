@@ -58,39 +58,44 @@ export default {
                 return;
             }
             this.todos.push({ id: this.id++, task: newTask, completed: false });
-            this.updateListInURL();
         },
         completeTodo(id) {
             const item = this.todos.find((todo) => todo.id === id);
             item.completed = !item.completed;
-            this.updateListInURL();
         },
         deleteTodo(id) {
             const index = this.todos.findIndex((todo) => todo.id === id);
             this.todos.splice(index, 1);
-            this.updateListInURL();
         },
         completeAll() {
             if (this.todos.length == 0) {
                 return;
             }
             this.todos.forEach((todo) => {
-                todo.completed = true;
+                if (!todo.completed) {
+                    todo.completed = true;
+                }
             });
-            this.updateListInURL();
         },
         deleteAll() {
             if (this.todos.length == 0) {
                 return;
             }
             this.todos = [];
-            this.updateListInURL();
         },
         share() {
             const currentURL = window.location.href;
             window.navigator.clipboard
                 .writeText(currentURL)
                 .then(() => window.alert("copy!"));
+        },
+    },
+    watch: {
+        todos: {
+            deep: true,
+            handler() {
+                this.updateListInURL();
+            },
         },
     },
     computed: {
@@ -114,4 +119,10 @@ export default {
     },
 };
 </script>
-<style scoped></style>
+<style scoped>
+#todo-mobile {
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+</style>

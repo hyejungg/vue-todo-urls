@@ -63,6 +63,12 @@ export default {
 };
 </script>
 <style scoped>
+#home-mobile {
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 p {
     font-size: 12px;
 }

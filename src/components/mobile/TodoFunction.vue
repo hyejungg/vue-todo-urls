@@ -47,6 +47,10 @@ export default {
 };
 </script>
 <style scoped>
+#todo-function {
+    margin-left: 10%;
+    margin-right: 10%;
+}
 .right {
     margin-right: 0.5rem;
 }

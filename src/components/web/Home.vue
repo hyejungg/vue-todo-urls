@@ -1,5 +1,5 @@
 <template>
-    <div id="home-mobile">
+    <div id="home-web">
         <h2 class="mt-4">체크리스트</h2>
         <b-row class="mt-4">
             <b-form-input
@@ -62,6 +62,12 @@ export default {
 };
 </script>
 <style scoped>
+#home-web {
+    margin-top: 60px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 p {
     font-size: 12px;
 }
